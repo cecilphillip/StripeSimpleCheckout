@@ -6,9 +6,9 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
-//builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:4242") });
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+//builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:4242") }); //useful for debugging :)
 
 await builder.Build().RunAsync();
 
-public record Product(int Id, string StripePriceId, Uri image, string Title, string Description, string Color, int Quantity, uint Price);
+public record Product(int Id, string StripePriceId, Uri image, string Title, string Description, string Color, uint Quantity, uint Price);

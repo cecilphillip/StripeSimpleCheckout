@@ -42,14 +42,9 @@
     protected override void OnParametersSet()
     {
         if (Items == null) return;
-    }
-
-    protected override void OnInitialized()
-    {
-        if (Items == null) return;
         foreach (var item in Items)
         {
-            Total += item.Price;
+            Total += item.Price * item.Quantity;
         }
     }
 
