@@ -1,0 +1,35 @@
+﻿@page "/"
+@inject HttpClient Http
+@inject NavigationManager NavManager
+
+<PageTitle>Index</PageTitle>
+<h1 class="text-2xl uppercase pb-2">Checkout</h1>
+
+<CheckoutSummary Items="Products" />
+
+<button type="submit" @onclick="StartCheckoutSession"
+        class="my-2 py-2 bg-emerald-500 min-w-full disabled:opacity-50 hover:bg-emerald-600 cursor-pointer">
+    <div class="flex flex-row justify-center items-center text-sm">
+      <div class="flex-row"></div>
+      <span class="text-slate-50">Continue to</span>
+      <img class="h-6" src="assets/stripewhite.png" alt="Stripe" srcset="" />
+    </div>
+</button>
+
+@code {
+    private Product[]? Products {get;set;}
+    
+    protected override async Task OnInitializedAsync()
+    {
+        Products = await Http.GetFromJsonAsync<Product[]>("/shopping-cart") ?? Array.Empty<Product>();
+    }
+
+    protected async Task StartCheckoutSession(MouseEventArgs e)
+    {
+        var resp = await Http.PostAsync("/create-checkout-session", null);
+        if(!resp.IsSuccessStatusCode) return;
+        using var payload = await resp.Content.ReadFromJsonAsync<JsonDocument>();
+        var redirectUrl = payload!.RootElement.GetProperty("url").GetString();
+        NavManager.NavigateTo(redirectUrl!);
+    }
+}

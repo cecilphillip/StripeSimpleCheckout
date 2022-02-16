@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# 
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCheckoutServer", "SimpleCheckoutServer\SimpleCheckoutServer.csproj", "{0B4589E9-7033-461C-A069-B40B45173F0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCheckoutBlazor.Client", "SimpleCheckoutBlazor\SimpleCheckoutBlazor.Client.csproj", "{1D9B7B9B-7A9A-4EDB-B6EF-FFE4F58E8DCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FD67B04-0304-4DDB-9353-1A5445A07E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FD67B04-0304-4DDB-9353-1A5445A07E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FD67B04-0304-4DDB-9353-1A5445A07E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FD67B04-0304-4DDB-9353-1A5445A07E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B4589E9-7033-461C-A069-B40B45173F0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B4589E9-7033-461C-A069-B40B45173F0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B4589E9-7033-461C-A069-B40B45173F0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B4589E9-7033-461C-A069-B40B45173F0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CCE8480-07CE-432A-AF17-547C75B3A4A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CCE8480-07CE-432A-AF17-547C75B3A4A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CCE8480-07CE-432A-AF17-547C75B3A4A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CCE8480-07CE-432A-AF17-547C75B3A4A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D9B7B9B-7A9A-4EDB-B6EF-FFE4F58E8DCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D9B7B9B-7A9A-4EDB-B6EF-FFE4F58E8DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D9B7B9B-7A9A-4EDB-B6EF-FFE4F58E8DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9B7B9B-7A9A-4EDB-B6EF-FFE4F58E8DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

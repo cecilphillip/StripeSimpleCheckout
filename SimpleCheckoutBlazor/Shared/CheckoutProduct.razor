@@ -1,0 +1,24 @@
+<div class="py-2">
+  @if (Product != null)
+  {
+    <div class="flex flex-row space-x-4">
+      <img src="@Product.image" alt="@Product.Title" class="w-24 h-32"/>
+      <div class="flex flex-col text-left text-neutral-400">
+        <h4 class="text-neutral-900 font-medium text-base">@Product.Title</h4>
+        <p class="text-sm">@Product.Description</p>
+        <div class="pt-2 text-sm">
+          <p>Color: @Product.Color</p>
+          <p>Quantity: @Product.Quantity</p>
+          <p>Price: $@(Product.Price / 100m)</p>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+
+@code
+{
+  [Parameter]
+  public Product? Product { get; set; }
+}

@@ -1,0 +1,57 @@
+<section class="border">
+    <h2 class="text-base uppercase bg-zinc-100 px-12">In Your Bag</h2>
+    <div class="px-12 pt-2 pb-4">
+        <h3 class="font-semibold uppercase text-left">Arrives Feb 1, 2022</h3>
+        <hr/>
+        @if (Items != null && Items.Any())
+        {
+            @foreach (var product in Items)
+            {
+                <CheckoutProduct Product="product"/>
+            }
+
+            <hr/>
+            <div class="py-2">
+                <div class="flex flex-row justify-between text-sm">
+                    <div>Subtotal</div>
+                    <div>@FormatPrice(Total)</div>
+                </div>
+                <div class="flex flex-row justify-between text-sm">
+                    <div>Estimated Shipping</div>
+                    <div>Calculated at next step</div>
+                </div>
+                <div class="flex flex-row justify-between text-sm">
+                    <div>Estimated Tax</div>
+                    <div>Calculated at next step</div>
+                </div>
+            </div>
+            <div class="flex flex-row justify-between text-sm font-semibold text-emerald-500 text-lg">
+                <div>Total</div>
+                <div>@FormatPrice(Total)</div>
+            </div>
+        }
+    </div>
+</section>
+
+@code {
+    [Parameter]
+    public IEnumerable<Product>? Items { get; set; }
+
+    private uint Total { get; set; } = 0;
+
+    protected override void OnParametersSet()
+    {
+        if (Items == null) return;
+    }
+
+    protected override void OnInitialized()
+    {
+        if (Items == null) return;
+        foreach (var item in Items)
+        {
+            Total += item.Price;
+        }
+    }
+
+    protected string FormatPrice(uint total) =>  $"${(total / 100m):0.00}";
+}
