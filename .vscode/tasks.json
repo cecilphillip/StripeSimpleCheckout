@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/SimpleCheckout.sln",
+                "${workspaceFolder}/src/SimpleCheckout.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/SimpleCheckoutServer/SimpleCheckoutServer.csproj",
+                "${workspaceFolder}/src/SimpleCheckoutServer/SimpleCheckoutServer.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/SimpleCheckoutServer/SimpleCheckoutServer.csproj"
+                "${workspaceFolder}/src/SimpleCheckoutServer/SimpleCheckoutServer.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

@@ -7,9 +7,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/SimpleCheckoutServer/bin/Debug/net6.0/SimpleCheckoutServer.dll",
+            "program": "${workspaceFolder}/src/SimpleCheckoutServer/bin/Debug/net6.0/SimpleCheckoutServer.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/SimpleCheckoutServer",
+            "cwd": "${workspaceFolder}/src/SimpleCheckoutServer",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
