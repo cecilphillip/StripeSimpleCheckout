@@ -36,7 +36,7 @@ app.MapPost("/create-checkout-session", async (HttpRequest request) =>
 {
     var baseUrl = $"{request.Scheme}://{request.Host}";
 
-    var lineItems = userShoppingCart.Select(p => new {Price = p.StripePriceId, Quantity = p.Quantity});
+    var lineItems = userShoppingCart.Select(p => new { Price = p.StripePriceId, Quantity = p.Quantity });
 
     var sessionOptions = new SessionCreateOptions
     {
@@ -51,7 +51,7 @@ app.MapPost("/create-checkout-session", async (HttpRequest request) =>
     };
     var checkoutSerice = new SessionService();
     var session = await checkoutSerice.CreateAsync(sessionOptions);
-    return Results.Ok(new {session.Url});
+    return Results.Ok(new { session.Url });
 });
 
 
